@@ -21,7 +21,7 @@ namespace Calculator
     public partial class MainWindow : Window
     {
 
-        float result = 0;
+        double result = 0;
         string operation = "";
         bool enter_value = false;
         
@@ -43,9 +43,9 @@ namespace Calculator
                 txtDisplay.Text = "";
             enter_value = false;
 
-            if (button.Content.ToString()==".")
+            if (button.Content.ToString()==",")
             {
-                if (!txtDisplay.Text.Contains("."))
+                if (!txtDisplay.Text.Contains(","))
                     txtDisplay.Text = txtDisplay.Text + button.Content;
             }
             
@@ -72,7 +72,14 @@ namespace Calculator
             else
             {
                 operation = button.Content.ToString();
-                result = float.Parse(txtDisplay.Text);
+                try
+                {
+                    result = double.Parse(txtDisplay.Text);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 txtDisplay.Text = "";
                 lblShowUp.Content = result + "  " + operation;
             }
@@ -84,23 +91,30 @@ namespace Calculator
             switch(operation)
             {
                 case "+":
-                    txtDisplay.Text = (result + float.Parse(txtDisplay.Text)).ToString();
+                    txtDisplay.Text = (result + double.Parse(txtDisplay.Text)).ToString();
                     break;
                 case "-":
-                    txtDisplay.Text = (result - float.Parse(txtDisplay.Text)).ToString();
+                    txtDisplay.Text = (result - double.Parse(txtDisplay.Text)).ToString();
                     break;
                 case "*":
-                    txtDisplay.Text = (result * float.Parse(txtDisplay.Text)).ToString();
+                    txtDisplay.Text = (result * double.Parse(txtDisplay.Text)).ToString();
                     break;
                 case "/":
-                    txtDisplay.Text = (result / float.Parse(txtDisplay.Text)).ToString();
+                    txtDisplay.Text = (result / double.Parse(txtDisplay.Text)).ToString();
                     break;
                 default:
                     break;
 
 
             }
-            result = float.Parse(txtDisplay.Text);
+            try
+            {
+                result = double.Parse(txtDisplay.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             operation = "";
         }
 
@@ -125,7 +139,9 @@ namespace Calculator
 
         private void BtnPositiveNegative_Click(object sender, RoutedEventArgs e)
         {
-            txtDisplay.Text = (float.Parse(txtDisplay.Text)*-1).ToString();
+            txtDisplay.Text = (double.Parse(txtDisplay.Text)*-1).ToString();
         }
+
+        
     }
 }

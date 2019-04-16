@@ -31,7 +31,18 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="DimGray"/>
+                    <Setter Property="BorderBrush" Value="#2e3137"/> 
                 </Trigger>
+                <EventTrigger RoutedEvent="Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                    To="LightGray" Duration="0:0:0.25"/>
+                            <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                    To="DimGray" Duration="0:0:0.25"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
             </Style.Triggers>
         </Style>
         <Style TargetType="Button" x:Key="numericBtn" BasedOn="{StaticResource baseBtn}">

@@ -24,6 +24,8 @@ namespace Calculator
         double result = 0;
         string operation = "";
         bool enter_value = false;
+        //Stack<string> history = new Stack<string>();
+        Stack<string> history = new Stack<string>();
         
 
         
@@ -53,10 +55,20 @@ namespace Calculator
 
             {
                 txtDisplay.Text = txtDisplay.Text + button.Content;
+                enter_value = true;
             }
         }
 
-       
+       private void ShowHistory()
+        {
+            string[] history_array = history.ToArray();
+            lblShowUp.Content = "";
+            for (int i = history.Count - 1; i >= 0; i--)
+            {
+
+                lblShowUp.Content += history_array[i];
+            }
+        }
 
         private void operators_click(object sender, RoutedEventArgs e)
         {
@@ -64,11 +76,26 @@ namespace Calculator
 
             if (result != 0)
             {
-                //BtnEquals.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-                Calculate();
+                if (enter_value)
+                {
+                    history.Pop();
+                    history.Push(button.Content.ToString());
+                    operation = button.Content.ToString();
+                }
+                else
+                {
+                    history.Push(txtDisplay.Text);
+                    history.Push(operation);
+                    Calculate();
+                }
+                
+                
+                //lblShowUp.Content += txtDisplay.Text + "  " + operation + "  ";
+                
                 enter_value = true;
-                operation = button.Content.ToString();
-                lblShowUp.Content = result + "  " + operation;
+                //operation = button.Content.ToString();
+                ShowHistory();
+
             }
             else
             {
@@ -81,27 +108,34 @@ namespace Calculator
                 {
                     MessageBox.Show(ex.Message);
                 }
-                txtDisplay.Text = "";
-                lblShowUp.Content = result + "  " + operation;
+
+                history.Push(result.ToString());
+                history.Push(operation);
+                ShowHistory();
+
+
+                enter_value = true;
             }
         }
 
         private void Calculate()
         {
-            lblShowUp.Content = "";
+            
+            
             switch (operation)
             {
                 case "+":
-                    txtDisplay.Text = (result + double.Parse(txtDisplay.Text)).ToString();
+                   
+                    result = result + double.Parse(txtDisplay.Text);
                     break;
                 case "-":
-                    txtDisplay.Text = (result - double.Parse(txtDisplay.Text)).ToString();
+                    result = result - double.Parse(txtDisplay.Text);
                     break;
                 case "×":
-                    txtDisplay.Text = (result * double.Parse(txtDisplay.Text)).ToString();
+                    result = result * double.Parse(txtDisplay.Text);
                     break;
                 case "÷":
-                    txtDisplay.Text = (result / double.Parse(txtDisplay.Text)).ToString();
+                    result = result / double.Parse(txtDisplay.Text);
                     break;
                 default:
                     break;
@@ -110,7 +144,8 @@ namespace Calculator
             }
             try
             {
-                result = double.Parse(txtDisplay.Text);
+                
+                txtDisplay.Text = result.ToString();
             }
             catch (Exception ex)
             {
@@ -121,6 +156,7 @@ namespace Calculator
 
         private void BtnEquals_Click(object sender, RoutedEventArgs e)
         {
+            lblShowUp.Content = "";
             Calculate();
         }
 

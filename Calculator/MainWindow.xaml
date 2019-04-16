@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="450" Width="280" Background="#2e3137"
+        Title="Calculator" Height="450" Width="280" Background="#2e3036"
         Icon="Calculator.ico"
         ResizeMode="CanMinimize">
 
@@ -33,21 +33,23 @@
             </Style.Setters>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="DimGray"/>
-                    <Setter Property="BorderBrush" Value="#2e3137"/> 
+                    
+                    <Setter Property="Background"  Value="#63666f"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
                 </Trigger>
                 <EventTrigger RoutedEvent="Click">
                     <BeginStoryboard>
                         <Storyboard>
                             <ColorAnimation Storyboard.TargetProperty="Background.Color"
-                    To="LightGray" Duration="0:0:0.10" AutoReverse="True"/>
+                    To="#9ea0a6" Duration="0:0:0.10" AutoReverse="True"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
+                
             </Style.Triggers>
         </Style>
         <Style TargetType="Button" x:Key="numericBtn" BasedOn="{StaticResource baseBtn}">
-            <Setter Property="Background" Value="#2e3137"/>
+            <Setter Property="Background" Value="#2e3036"/>
             
             
         </Style>
@@ -76,7 +78,7 @@
         <!--Number Buttons-->
         <Button x:Name="Btn7" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Click="numbers_Only">7</Button>
         <Button x:Name="Btn8" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="2" Click="numbers_Only">8</Button>
-        <Button x:Name="Btn9" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="3" Click="numbers_Only">9</Button>
+        <Button x:Name="Btn9" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="3" Click="numbers_Only" BorderThickness="1">9</Button>
         <Button x:Name="Btn4" Style="{StaticResource numericBtn}"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Click="numbers_Only">4</Button>
         <Button x:Name="Btn5" Style="{StaticResource numericBtn}"  Grid.Row="3" Grid.Column="2" Click="numbers_Only">5</Button>
         <Button x:Name="Btn6" Style="{StaticResource numericBtn}"  Grid.Row="3" Grid.Column="3" Click="numbers_Only">6</Button>

@@ -64,7 +64,8 @@ namespace Calculator
 
             if (result != 0)
             {
-                BtnEquals.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                //BtnEquals.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                Calculate();
                 enter_value = true;
                 operation = button.Content.ToString();
                 lblShowUp.Content = result + "  " + operation;
@@ -85,10 +86,10 @@ namespace Calculator
             }
         }
 
-        private void BtnEquals_Click(object sender, RoutedEventArgs e)
+        private void Calculate()
         {
             lblShowUp.Content = "";
-            switch(operation)
+            switch (operation)
             {
                 case "+":
                     txtDisplay.Text = (result + double.Parse(txtDisplay.Text)).ToString();
@@ -111,11 +112,16 @@ namespace Calculator
             {
                 result = double.Parse(txtDisplay.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             operation = "";
+        }
+
+        private void BtnEquals_Click(object sender, RoutedEventArgs e)
+        {
+            Calculate();
         }
 
         private void BtnCE_Click(object sender, RoutedEventArgs e)
@@ -126,6 +132,7 @@ namespace Calculator
         private void BtnC_Click(object sender, RoutedEventArgs e)
         {
             txtDisplay.Text = "0";
+            lblShowUp.Content = "";
             result = 0;
         }
 

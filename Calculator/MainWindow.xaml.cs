@@ -39,7 +39,7 @@ namespace Calculator
         {
             Button button = (Button)sender;
 
-            if (txtDisplay.Text == "0" || (enter_value))
+            if ((txtDisplay.Text == "0" || (enter_value))&& button.Content.ToString() != ",")
                 txtDisplay.Text = "";
             enter_value = false;
 

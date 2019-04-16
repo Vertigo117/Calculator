@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Calculator" Height="450" Width="280" Background="#2e3137">
     <Window.Resources>
-        
+       
         <Style TargetType="Button" x:Key="baseBtn">
             <Style.Setters>
             <Setter Property="Foreground" Value="White"/>
@@ -50,6 +50,9 @@
             
             
         </Style>
+        <Style TargetType="Button" x:Key="operationButton" BasedOn="{StaticResource baseBtn}">
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
 
     </Window.Resources>
     <Grid>
@@ -82,12 +85,12 @@
         <Button x:Name="Btn0" Style="{StaticResource numericBtn}" Grid.Row="5" Grid.Column="2" Click="numbers_Only">0</Button>
 
         <!--Operations Buttons-->
-        <Button x:Name="BtnPlus" Style="{StaticResource baseBtn}"  Grid.Row="1" Grid.Column="4" Click="operators_click">+</Button>
-        <Button x:Name="BtnMinus" Style="{StaticResource baseBtn}"  Grid.Row="2" Grid.Column="4" Click="operators_click">-</Button>
-        <Button x:Name="BtnMul" Style="{StaticResource baseBtn}"  Grid.Row="3" Grid.Column="4" Click="operators_click">×</Button>
-        <Button x:Name="BtnDiv" Style="{StaticResource baseBtn}"  Grid.Row="4" Grid.Column="4" Click="operators_click">÷</Button>
-        <Button x:Name="BtnEquals" Style="{StaticResource baseBtn}" Grid.Row="5" Grid.Column="4" Click="BtnEquals_Click">=</Button>
-        <Button x:Name="BtnColon" Style="{StaticResource baseBtn}" Grid.Row="5" Grid.Column="3" Content="," Click="numbers_Only"/>
+        <Button x:Name="BtnPlus" Style="{StaticResource operationButton}"  Grid.Row="1" Grid.Column="4" Click="operators_click">+</Button>
+        <Button x:Name="BtnMinus" Style="{StaticResource operationButton}"  Grid.Row="2" Grid.Column="4" Click="operators_click">-</Button>
+        <Button x:Name="BtnMul" Style="{StaticResource operationButton}"  Grid.Row="3" Grid.Column="4" Click="operators_click">×</Button>
+        <Button x:Name="BtnDiv" Style="{StaticResource operationButton}"  Grid.Row="4" Grid.Column="4" Click="operators_click">÷</Button>
+        <Button x:Name="BtnEquals" Style="{StaticResource operationButton}" Grid.Row="5" Grid.Column="4" Click="BtnEquals_Click">=</Button>
+        <Button x:Name="BtnColon" Style="{StaticResource operationButton}" Grid.Row="5" Grid.Column="3" Content="," Click="numbers_Only"/>
 
 
         <!--Clear Buttons-->
@@ -96,7 +99,7 @@
         <Button x:Name="BtnBackspace" Style="{StaticResource baseBtn}" Grid.Row="1" Grid.Column="3" Content="&#xE083;" Click="BtnBackspace_Click" />
 
         <!--Positive/Negative Buttons-->
-        <Button x:Name="BtnPositiveNegative" Style="{StaticResource baseBtn}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Click="BtnPositiveNegative_Click">+-</Button>
+        <Button x:Name="BtnPositiveNegative" Style="{StaticResource operationButton}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Click="BtnPositiveNegative_Click">+-</Button>
 
         <Label x:Name="lblShowUp" Foreground="White" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Grid.ColumnSpan="5" HorizontalContentAlignment="Right"></Label>
         <TextBox x:Name="txtDisplay"  Foreground="White" Background="#2e3137" IsReadOnly="True" TextAlignment="Right" FontSize="30" BorderThickness="0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Height="40" VerticalAlignment="Bottom" >0</TextBox>

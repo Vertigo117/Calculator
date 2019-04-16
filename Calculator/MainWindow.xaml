@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
         Title="Calculator" Height="450" Width="280" Background="#2e3137"
-        Icon="Calculator.ico">
+        Icon="Calculator.ico"
+        ResizeMode="CanMinimize">
 
     <Window.Resources>
        

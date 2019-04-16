@@ -40,9 +40,7 @@
                     <BeginStoryboard>
                         <Storyboard>
                             <ColorAnimation Storyboard.TargetProperty="Background.Color"
-                    To="LightGray" Duration="0:0:0.25"/>
-                            <ColorAnimation Storyboard.TargetProperty="Background.Color"
-                    To="DimGray" Duration="0:0:0.25"/>
+                    To="LightGray" Duration="0:0:0.10" AutoReverse="True"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

@@ -76,4 +76,3 @@ C:\Users\Vertigo\Desktop\Calculator\Calculator\obj\Debug\Calculator.pdb
 \\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\bin\Debug\Calculator.application
 \\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\obj\Debug\Calculator.exe.manifest
 \\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\obj\Debug\Calculator.application
-\\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache

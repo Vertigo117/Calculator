@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
   <asmv1:assemblyIdentity name="Calculator.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Calculator.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Calculator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -42,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Calculator.exe" size="16824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Calculator.exe" size="362936">
       <assemblyIdentity name="Calculator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/IkrhPhTRzFQNpcJx95jWlIn0r8kSJnRZ0SB5Tnj6Yg=</dsig:DigestValue>
+        <dsig:DigestValue>ALVcXtJG4oN7d6mofXJx1BA4B1AFLUAuFbU84II9jQ8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -60,6 +61,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>rl5/qDc7Jz+tB+BIbOv9iMGPlRe6YJwrjmU09dnlPcs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Calculator.ico" size="172661">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>SOfE5bnFG3m5Md1K2S5iAaTEnj2GxM63o2aq9JKbTb0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

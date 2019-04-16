@@ -72,7 +72,7 @@
         <!--Operations Buttons-->
         <Button x:Name="BtnPlus" Style="{StaticResource baseBtn}"  Grid.Row="1" Grid.Column="4" Click="operators_click">+</Button>
         <Button x:Name="BtnMinus" Style="{StaticResource baseBtn}"  Grid.Row="2" Grid.Column="4" Click="operators_click">-</Button>
-        <Button x:Name="BtnMul" Style="{StaticResource baseBtn}"  Grid.Row="3" Grid.Column="4" Click="operators_click">*</Button>
+        <Button x:Name="BtnMul" Style="{StaticResource baseBtn}"  Grid.Row="3" Grid.Column="4" Click="operators_click">X</Button>
         <Button x:Name="BtnDiv" Style="{StaticResource baseBtn}"  Grid.Row="4" Grid.Column="4" Click="operators_click">/</Button>
         <Button x:Name="BtnEquals" Style="{StaticResource baseBtn}" Grid.Row="5" Grid.Column="4" Click="BtnEquals_Click">=</Button>
         <Button x:Name="BtnColon" Style="{StaticResource baseBtn}" Grid.Row="5" Grid.Column="3" Content="," Click="numbers_Only"/>
@@ -81,12 +81,12 @@
         <!--Clear Buttons-->
         <Button x:Name="BtnCE" Style="{StaticResource baseBtn}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Click="BtnCE_Click">CE</Button>
         <Button x:Name="BtnC" Style="{StaticResource baseBtn}" Grid.Row="1" Grid.Column="2" Click="BtnC_Click">C</Button>
-        <Button x:Name="BtnBackspace" Style="{StaticResource baseBtn}" Grid.Row="1" Grid.Column="3" Content="&lt;=" Click="BtnBackspace_Click"></Button>
+        <Button x:Name="BtnBackspace" Style="{StaticResource baseBtn}" Grid.Row="1" Grid.Column="3" Content="&#xE083;" FontFamily="Segoe UI Symbol" Click="BtnBackspace_Click" />
 
         <!--Positive/Negative Buttons-->
         <Button x:Name="BtnPositiveNegative" Style="{StaticResource baseBtn}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Click="BtnPositiveNegative_Click">+-</Button>
 
         <Label x:Name="lblShowUp" Foreground="White" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Grid.ColumnSpan="5" HorizontalContentAlignment="Right"></Label>
-        <TextBox x:Name="txtDisplay" Foreground="White" Background="#2e3137" IsReadOnly="True" TextAlignment="Right" FontSize="30" BorderThickness="0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Height="40" VerticalAlignment="Bottom" >0</TextBox>
+        <TextBox x:Name="txtDisplay"  Foreground="White" Background="#2e3137" IsReadOnly="True" TextAlignment="Right" FontSize="30" BorderThickness="0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Height="40" VerticalAlignment="Bottom" >0</TextBox>
     </Grid>
 </Window>

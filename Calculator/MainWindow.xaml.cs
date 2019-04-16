@@ -96,7 +96,7 @@ namespace Calculator
                 case "-":
                     txtDisplay.Text = (result - double.Parse(txtDisplay.Text)).ToString();
                     break;
-                case "*":
+                case "X":
                     txtDisplay.Text = (result * double.Parse(txtDisplay.Text)).ToString();
                     break;
                 case "/":

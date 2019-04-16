@@ -61,7 +61,6 @@ C:\Users\Vertigo\Desktop\Calculator\Calculator\obj\Debug\Calculator.pdb
 \\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\bin\Debug\Calculator.exe.config
 \\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\bin\Debug\Calculator.exe
 \\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\bin\Debug\Calculator.pdb
-\\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
 \\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\obj\Debug\MainWindow.g.cs
 \\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\obj\Debug\App.g.cs
 \\msk.mts.ru\ug\User\Folders\06\00\avtimche\Desktop\INVENTORY\Training\C# developer\Calculator\Calculator\obj\Debug\Calculator_MarkupCompile.cache

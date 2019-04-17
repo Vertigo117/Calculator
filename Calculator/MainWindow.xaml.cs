@@ -66,7 +66,7 @@ namespace Calculator
             lblShowUp.Content = "";
             foreach(string i in history)
             {
-                lblShowUp.Content += i;
+                lblShowUp.Content += i+" ";
             }
            
         }

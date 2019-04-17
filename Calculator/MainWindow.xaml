@@ -104,7 +104,7 @@
         <!--Positive/Negative Buttons-->
         <Button x:Name="BtnPositiveNegative" Style="{StaticResource operationButton}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Click="BtnPositiveNegative_Click">+-</Button>
 
-        <Label x:Name="lblShowUp" Foreground="White" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Grid.ColumnSpan="5" HorizontalContentAlignment="Right"></Label>
+        <Label x:Name="lblShowUp" Foreground="#CCCCCC" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Grid.ColumnSpan="5" HorizontalContentAlignment="Right" FontSize="15"></Label>
         <TextBox x:Name="txtDisplay"  Foreground="White" Background="#2e3137" IsReadOnly="True" TextAlignment="Right" FontSize="30" BorderThickness="0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Height="40" VerticalAlignment="Bottom" >0</TextBox>
     </Grid>
 </Window>

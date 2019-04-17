@@ -21,11 +21,12 @@ namespace Calculator
     public partial class MainWindow : Window
     {
 
-        double result = 0;
+        double value = 0;
         string operation = "";
         bool enter_value = false;
-        //Stack<string> history = new Stack<string>();
-        Stack<string> history = new Stack<string>();
+        //bool operation_changed = false;
+        
+        LinkedList<string> history = new LinkedList<string>();
         
 
         
@@ -41,9 +42,9 @@ namespace Calculator
         {
             Button button = (Button)sender;
 
-            if ((txtDisplay.Text == "0" || (enter_value))&& button.Content.ToString() != ",")
+            if ((txtDisplay.Text == "0" || (!enter_value)) && button.Content.ToString() != ",")
                 txtDisplay.Text = "";
-            enter_value = false;
+            //enter_value = false;
 
             if (button.Content.ToString()==",")
             {
@@ -61,60 +62,77 @@ namespace Calculator
 
        private void ShowHistory()
         {
-            string[] history_array = history.ToArray();
+            
             lblShowUp.Content = "";
-            for (int i = history.Count - 1; i >= 0; i--)
+            foreach(string i in history)
             {
-
-                lblShowUp.Content += history_array[i];
+                lblShowUp.Content += i;
             }
+           
         }
 
         private void operators_click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
+            //operation_changed = true;
+            //operation = button.Content.ToString();
 
-            if (result != 0)
+            if (value != 0)
             {
-                if (enter_value)
+                if (!enter_value)
                 {
-                    history.Pop();
-                    history.Push(button.Content.ToString());
-                    operation = button.Content.ToString();
+                    //    //history.Pop();
+                    //    //history.Push(button.Content.ToString());
+
+                    
+                    history.RemoveLast();
+                    history.AddLast(button.Content.ToString());
+                    ShowHistory();
+                    //enter_value = true;
+                    //operation_changed = false;
                 }
                 else
                 {
-                    history.Push(txtDisplay.Text);
-                    history.Push(operation);
+                    //history.Push(txtDisplay.Text);
+                    //history.Push(operation);
+                    operation = history.Last();
+                    
+                    history.AddLast(txtDisplay.Text);
+                    history.AddLast(button.Content.ToString());
                     Calculate();
+                    ShowHistory();
+                    enter_value = false;
                 }
-                
-                
+
+
                 //lblShowUp.Content += txtDisplay.Text + "  " + operation + "  ";
+
+                //enter_value = true;
                 
-                enter_value = true;
-                //operation = button.Content.ToString();
-                ShowHistory();
+
 
             }
             else
             {
-                operation = button.Content.ToString();
+                history.Clear();
                 try
                 {
-                    result = double.Parse(txtDisplay.Text);
+                    value = double.Parse(txtDisplay.Text);
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
 
-                history.Push(result.ToString());
-                history.Push(operation);
+                //history.Push(value.ToString());
+                //history.Push(operation);
+                history.AddLast(txtDisplay.Text);
+                history.AddLast(button.Content.ToString());
+                
                 ShowHistory();
+                enter_value = false;
 
-
-                enter_value = true;
+                
             }
         }
 
@@ -126,16 +144,16 @@ namespace Calculator
             {
                 case "+":
                    
-                    result = result + double.Parse(txtDisplay.Text);
+                    value = value + double.Parse(txtDisplay.Text);
                     break;
                 case "-":
-                    result = result - double.Parse(txtDisplay.Text);
+                    value = value - double.Parse(txtDisplay.Text);
                     break;
                 case "×":
-                    result = result * double.Parse(txtDisplay.Text);
+                    value = value * double.Parse(txtDisplay.Text);
                     break;
                 case "÷":
-                    result = result / double.Parse(txtDisplay.Text);
+                    value = value / double.Parse(txtDisplay.Text);
                     break;
                 default:
                     break;
@@ -145,19 +163,22 @@ namespace Calculator
             try
             {
                 
-                txtDisplay.Text = result.ToString();
+                txtDisplay.Text = value.ToString();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            operation = "";
+            //operation = "";
         }
 
         private void BtnEquals_Click(object sender, RoutedEventArgs e)
         {
+            operation = history.Last();
             lblShowUp.Content = "";
             Calculate();
+            value = 0;
+            
         }
 
         private void BtnCE_Click(object sender, RoutedEventArgs e)
@@ -169,7 +190,8 @@ namespace Calculator
         {
             txtDisplay.Text = "0";
             lblShowUp.Content = "";
-            result = 0;
+            history.Clear();
+            value = 0;
         }
 
         private void BtnBackspace_Click(object sender, RoutedEventArgs e)

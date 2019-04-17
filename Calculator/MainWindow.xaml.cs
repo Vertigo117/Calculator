@@ -24,8 +24,6 @@ namespace Calculator
         double value = 0;
         string operation = "";
         bool enter_value = false;
-        //bool operation_changed = false;
-        
         LinkedList<string> history = new LinkedList<string>();
         
 
@@ -38,18 +36,21 @@ namespace Calculator
 
         
 
-        private void numbers_Only(object sender, RoutedEventArgs e)
+        private void numbers_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
 
             if ((txtDisplay.Text == "0" || (!enter_value)) && button.Content.ToString() != ",")
+            {
                 txtDisplay.Text = "";
-            //enter_value = false;
+            }
+            
 
             if (button.Content.ToString()==",")
             {
                 if (!txtDisplay.Text.Contains(","))
                     txtDisplay.Text = txtDisplay.Text + button.Content;
+                enter_value = true;
             }
             
             else
@@ -74,27 +75,23 @@ namespace Calculator
         private void operators_click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            //operation_changed = true;
-            //operation = button.Content.ToString();
+            
 
             if (value != 0)
             {
                 if (!enter_value)
                 {
-                    //    //history.Pop();
-                    //    //history.Push(button.Content.ToString());
+                    
 
                     
                     history.RemoveLast();
                     history.AddLast(button.Content.ToString());
                     ShowHistory();
-                    //enter_value = true;
-                    //operation_changed = false;
+                   
                 }
                 else
                 {
-                    //history.Push(txtDisplay.Text);
-                    //history.Push(operation);
+                    
                     operation = history.Last();
                     
                     history.AddLast(txtDisplay.Text);
@@ -105,9 +102,7 @@ namespace Calculator
                 }
 
 
-                //lblShowUp.Content += txtDisplay.Text + "  " + operation + "  ";
-
-                //enter_value = true;
+                
                 
 
 
@@ -124,8 +119,7 @@ namespace Calculator
                     MessageBox.Show(ex.Message);
                 }
 
-                //history.Push(value.ToString());
-                //history.Push(operation);
+                
                 history.AddLast(txtDisplay.Text);
                 history.AddLast(button.Content.ToString());
                 
@@ -169,7 +163,7 @@ namespace Calculator
             {
                 MessageBox.Show(ex.Message);
             }
-            //operation = "";
+            
         }
 
         private void BtnEquals_Click(object sender, RoutedEventArgs e)

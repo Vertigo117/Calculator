@@ -76,16 +76,16 @@
         </Grid.RowDefinitions>
 
         <!--Number Buttons-->
-        <Button x:Name="Btn7" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Click="numbers_Only">7</Button>
-        <Button x:Name="Btn8" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="2" Click="numbers_Only">8</Button>
-        <Button x:Name="Btn9" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="3" Click="numbers_Only" BorderThickness="1">9</Button>
-        <Button x:Name="Btn4" Style="{StaticResource numericBtn}"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Click="numbers_Only">4</Button>
-        <Button x:Name="Btn5" Style="{StaticResource numericBtn}"  Grid.Row="3" Grid.Column="2" Click="numbers_Only">5</Button>
-        <Button x:Name="Btn6" Style="{StaticResource numericBtn}"  Grid.Row="3" Grid.Column="3" Click="numbers_Only">6</Button>
-        <Button x:Name="Btn1" Style="{StaticResource numericBtn}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Click="numbers_Only">1</Button>
-        <Button x:Name="Btn2" Style="{StaticResource numericBtn}" Grid.Row="4" Grid.Column="2" Click="numbers_Only">2</Button>
-        <Button x:Name="Btn3" Style="{StaticResource numericBtn}" Grid.Row="4" Grid.Column="3" Click="numbers_Only">3</Button>
-        <Button x:Name="Btn0" Style="{StaticResource numericBtn}" Grid.Row="5" Grid.Column="2" Click="numbers_Only">0</Button>
+        <Button x:Name="Btn7" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Click="numbers_Click">7</Button>
+        <Button x:Name="Btn8" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="2" Click="numbers_Click">8</Button>
+        <Button x:Name="Btn9" Style="{StaticResource numericBtn}"  Grid.Row="2" Grid.Column="3" Click="numbers_Click" BorderThickness="1">9</Button>
+        <Button x:Name="Btn4" Style="{StaticResource numericBtn}"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Click="numbers_Click">4</Button>
+        <Button x:Name="Btn5" Style="{StaticResource numericBtn}"  Grid.Row="3" Grid.Column="2" Click="numbers_Click">5</Button>
+        <Button x:Name="Btn6" Style="{StaticResource numericBtn}"  Grid.Row="3" Grid.Column="3" Click="numbers_Click">6</Button>
+        <Button x:Name="Btn1" Style="{StaticResource numericBtn}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Click="numbers_Click">1</Button>
+        <Button x:Name="Btn2" Style="{StaticResource numericBtn}" Grid.Row="4" Grid.Column="2" Click="numbers_Click">2</Button>
+        <Button x:Name="Btn3" Style="{StaticResource numericBtn}" Grid.Row="4" Grid.Column="3" Click="numbers_Click">3</Button>
+        <Button x:Name="Btn0" Style="{StaticResource numericBtn}" Grid.Row="5" Grid.Column="2" Click="numbers_Click">0</Button>
 
         <!--Operations Buttons-->
         <Button x:Name="BtnPlus" Style="{StaticResource operationButton}"  Grid.Row="1" Grid.Column="4" Click="operators_click">+</Button>
@@ -93,7 +93,7 @@
         <Button x:Name="BtnMul" Style="{StaticResource operationButton}"  Grid.Row="3" Grid.Column="4" Click="operators_click">×</Button>
         <Button x:Name="BtnDiv" Style="{StaticResource operationButton}"  Grid.Row="4" Grid.Column="4" Click="operators_click">÷</Button>
         <Button x:Name="BtnEquals" Style="{StaticResource operationButton}" Grid.Row="5" Grid.Column="4" Click="BtnEquals_Click">=</Button>
-        <Button x:Name="BtnColon" Style="{StaticResource operationButton}" Grid.Row="5" Grid.Column="3" Content="," Click="numbers_Only"/>
+        <Button x:Name="BtnColon" Style="{StaticResource operationButton}" Grid.Row="5" Grid.Column="3" Content="," Click="numbers_Click"/>
 
 
         <!--Clear Buttons-->

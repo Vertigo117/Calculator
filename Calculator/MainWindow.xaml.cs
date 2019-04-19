@@ -64,10 +64,10 @@ namespace Calculator
        private void ShowHistory()
         {
             
-            lblShowUp.Content = "";
+            lblShowUp.Text = "";
             foreach(string i in history)
             {
-                lblShowUp.Content += i+" ";
+                lblShowUp.Text += i+" ";
             }
            
         }
@@ -169,7 +169,7 @@ namespace Calculator
         private void BtnEquals_Click(object sender, RoutedEventArgs e)
         {
             operation = history.Last();
-            lblShowUp.Content = "";
+            lblShowUp.Text = "";
             Calculate();
             value = 0;
             
@@ -183,7 +183,7 @@ namespace Calculator
         private void BtnC_Click(object sender, RoutedEventArgs e)
         {
             txtDisplay.Text = "0";
-            lblShowUp.Content = "";
+            lblShowUp.Text = "";
             history.Clear();
             value = 0;
         }
